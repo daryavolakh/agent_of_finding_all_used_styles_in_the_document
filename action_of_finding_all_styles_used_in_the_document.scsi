@@ -411,7 +411,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator9E;;
 			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator7D;; 
 			*);;
-//ОСТАНОВИЛАСЬ ТУТ!!!
+
 		-> .agent_of_finding_all_styles_used_in_the_document_operator9E
 			(*
 			<- searchSetStr3;;
@@ -863,32 +863,263 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 
 		-> .agent_of_finding_all_styles_used_in_the_document_operator12A
 			(*
-				//добавление стилей в ответ
+			<- searchSetStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _set_for_styles;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _temp_style;;
+
+			-> rrel_set_3: rrel_assign: rrel_scp_var: rrel_node: _set;;
+
+			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator12B;;
+			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator22K;;
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator12B
+			(*
+			<- searchElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _set;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc_between_set_and_style;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _temp_style;;
+
+			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator12C;;
+			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator23A;;
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator12C
+			(*
+			<- eraseEl;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_erase: _arc_between_set_and_style;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator12D;;
+			*);;
+
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator12D
+			(*
+			<- searchSetStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _temp_style;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _temp_node;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_assign: rrel_scp_var: rrel_norole_relation: _relation;;
+
+			-> rrel_set_2: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_3: rrel_fixed: rrel_scp_var: _answer;;  //может не сработать
+			-> rrel_set_4: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_set_5: rrel_fixed: rrel_scp_var: _answer;;
+
+			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator12B;;
+			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator22M;;
 			*);;
 
 		-> .agent_of_finding_all_styles_used_in_the_document_operator22A 
 			(*
-				//сообщение "документ пустой"
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_generating_comment;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_finding_all_styles_used_in_the_document_operator22A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Документ пустой!];;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator22B;;  
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator22B
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator23A;;
 			*);;
 
 		-> .agent_of_finding_all_styles_used_in_the_document_operator22C 
 			(*
-				//сообщение "документ имеет неправ.структуру"
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_generating_comment;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_finding_all_styles_used_in_the_document_operator22A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Документ имеет неправильную структуру!];;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator22D;; 
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator22D
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator23A;;
 			*);;
 
 		-> .agent_of_finding_all_styles_used_in_the_document_operator22E 
 			(*
-				//сообщение "ошибка входных параметров"
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_generating_comment;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_finding_all_styles_used_in_the_document_operator22A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Oшибка входных параметров!];;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator22F;; 
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator22F
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator23A;;
 			*);;
 
 		-> .agent_of_finding_all_styles_used_in_the_document_operator22G 
 			(*
-				//сообщение "css-документ имеет неправ.структуру"
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_generating_comment;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_finding_all_styles_used_in_the_document_operator22A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Css-документ имеет неправ.структуру!];;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator22H;; 
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator22H
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator23A;;
 			*);;
 
 		-> .agent_of_finding_all_styles_used_in_the_document_operator22I
 			(*
-				//сообщение "глобальные стили имеют неправильную структуру"
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_generating_comment;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_finding_all_styles_used_in_the_document_operator22A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Глобальные стили имеют неправильную структуру!];;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator22J;; 
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator22J
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator23A;;
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator22K
+			(*
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_generating_comment;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_finding_all_styles_used_in_the_document_operator22A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [В данном документе не применяются стили!];;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator22L;; 
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator22L
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator23A;;
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator22M
+			(*
+			<- call;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_of_generating_comment;;    
+			-> rrel_2: rrel_fixed: rrel_scp_const: .agent_of_finding_all_styles_used_in_the_document_operator22A_params
+				(*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+				-> rrel_2: rrel_fixed: rrel_scp_const: [Пустой стиль!];;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+				*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator22N;; 
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator22N
+			(*
+			<- waitReturn;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator23A;;
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator23A
+			(*
+			<- eraseEl;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_erase: _set_for_class;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator23B;;
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator23B
+			(*
+			<- eraseEl;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_erase: _set_for_styles;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator24A;;
+			*);;
+
+		-> .agent_of_finding_all_styles_used_in_the_document_operator24A
+			(*
+			<- genElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _quest;;
+			-> rrel_2: rrel_assign: rrel_const: rrel_common: rrel_scp_var: _arc1;;
+		  	-> rrel_3: rrel_fixed: rrel_scp_var: _answer;;
+		  	-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+		  	-> rrel_5: rrel_fixed: rrel_scp_const: nrel_answer;;
+
+			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator_return;; 
 			*);;
 
 		-> .agent_of_finding_all_styles_used_in_the_document_operator_return
