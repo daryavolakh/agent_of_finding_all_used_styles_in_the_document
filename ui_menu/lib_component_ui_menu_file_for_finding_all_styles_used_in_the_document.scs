@@ -21,4 +21,4 @@ lib_component_ui_menu_file_of_finding_all_styles_used_in_the_document => nrel_ma
 		*);;
 	*);;
 
-lib_component_ui_menu_file_of_finding_all_styles_used_in_the_document = [*^"file://ui_menu_file_of_finding_all_styles_used_in_the_document.scsi"*];; 
+lib_component_ui_menu_file_of_finding_all_styles_used_in_the_document = [*^"file://ui_menu_file_for_finding_all_styles_used_in_the_document.scsi"*];; 

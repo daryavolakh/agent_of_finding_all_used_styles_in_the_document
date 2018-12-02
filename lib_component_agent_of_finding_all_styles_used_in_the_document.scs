@@ -1,4 +1,4 @@
-lib_component_agent_of_finding_all_used_styles_in_the_document
+lib_component_agent_of_finding_all_styles_used_in_the_document
 => nrel_main_idtf:
 	[Компонент библиотеки. Sc-агент нахождения всех стилей, используемых в html-документе]
 	(* <- lang_ru;; *);
@@ -10,7 +10,7 @@ lib_component_agent_of_finding_all_used_styles_in_the_document
 <- reusable_scp_agent;
 
 -> rrel_key_sc_element: 
-	.platform_independent_realization_of_sc_agent_of_finding_all_used_styles_in_the_document;
+	.platform_independent_realization_of_sc_agent_of_finding_all_styles_used_in_the_document;
 
 <- rrel_key_sc_element: 
 	...
