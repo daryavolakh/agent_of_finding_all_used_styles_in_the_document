@@ -14,7 +14,32 @@ scp_program -> proc_find_all_styles_in_html_document
 
 			-> rrel_1: rrel_assign: rrel_scp_var: rrel_node: _set_for_class;;  
 
-			=> nrel_goto: .proc_find_all_styles_in_html_document_operator1A;; 
+			=> nrel_goto: .proc_find_all_styles_in_html_document_operator0B;; 
+			*);;
+
+		-> .proc_find_all_styles_in_html_document_operator0B
+			(*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var:  _start_tag;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _unknown_style;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_style;;
+
+			=> nrel_then: .proc_find_all_styles_in_html_document_operator0C;;
+			=> nrel_else: .proc_find_all_styles_in_html_document_operator1A;;
+			*);;
+
+		-> .proc_find_all_styles_in_html_document_operator0C
+			(*
+			<- genElStr3;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _set_for_styles;;
+			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown_style;;
+
+			=> nrel_goto: .proc_find_all_styles_in_html_document_operator1A;;
 			*);;
 		
 		-> .proc_find_all_styles_in_html_document_operator1A
@@ -28,7 +53,7 @@ scp_program -> proc_find_all_styles_in_html_document
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_tag_content;;
 
 			=> nrel_then: .proc_find_all_styles_in_html_document_operator1B;; 
-			=> nrel_else: .proc_find_all_styles_in_html_document_operator4A;; 
+			=> nrel_else: .proc_find_all_styles_in_html_document_operator4C;; 
 			*);;
 
 		-> .proc_find_all_styles_in_html_document_operator1B
@@ -51,7 +76,7 @@ scp_program -> proc_find_all_styles_in_html_document
 			-> rrel_2: rrel_assign: rrel_scp_var: _arc;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown;;  
 
-			=> nrel_then: .proc_find_all_styles_in_html_document_operator5C;;
+			=> nrel_then: .proc_find_all_styles_in_html_document_operator4C;;
 			=> nrel_else: .proc_find_all_styles_in_html_document_operator1D;;
 			*);;
 
@@ -63,8 +88,8 @@ scp_program -> proc_find_all_styles_in_html_document
 			-> rrel_2: rrel_assign: rrel_scp_var: _arc;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown;;  
 
-			=> nrel_then: .proc_find_all_styles_in_html_document_operator3A;;   //!!!
-			=> nrel_else: .proc_find_all_styles_in_html_document_operator5C;; 
+			=> nrel_then: .proc_find_all_styles_in_html_document_operator3A;;  
+			=> nrel_else: .proc_find_all_styles_in_html_document_operator4C;; 
 			*);;
 
 
@@ -79,7 +104,7 @@ scp_program -> proc_find_all_styles_in_html_document
 			-> rrel_set_3: rrel_assign: rrel_scp_var: _set_for_tags;;
 
 			=> nrel_then: .proc_find_all_styles_in_html_document_operator2B;;
-			=> nrel_else: .proc_find_all_styles_in_html_document_operator5C;; 
+			=> nrel_else: .proc_find_all_styles_in_html_document_operator4C;; 
 			*);;
 
 		-> .proc_find_all_styles_in_html_document_operator2B
@@ -91,7 +116,7 @@ scp_program -> proc_find_all_styles_in_html_document
 			-> rrel_3: rrel_assign: rrel_scp_var: rrel_node: _new_unknown;;
 
 			=> nrel_then: .proc_find_all_styles_in_html_document_operator2C;;
-			=> nrel_else: .proc_find_all_styles_in_html_document_operator5C;;
+			=> nrel_else: .proc_find_all_styles_in_html_document_operator4C;;
 			*);;
 
 		-> .proc_find_all_styles_in_html_document_operator2C
@@ -100,7 +125,7 @@ scp_program -> proc_find_all_styles_in_html_document
 
 			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_erase: _arc_for_erase;;
 
-			=> nrel_goto: .proc_find_all_styles_in_html_document_operator5A;;
+			=> nrel_goto: .proc_find_all_styles_in_html_document_operator4A;;
 			*);;
 
 		-> .proc_find_all_styles_in_html_document_operator3A
@@ -137,7 +162,7 @@ scp_program -> proc_find_all_styles_in_html_document
 			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown_class;;
 
 			=> nrel_then: .proc_find_all_styles_in_html_document_operator3D;;
-			=> nrel_else: .proc_find_all_styles_in_html_document_operator5C;;
+			=> nrel_else: .proc_find_all_styles_in_html_document_operator4C;;
 			*);;
 
 		-> .proc_find_all_styles_in_html_document_operator3D
@@ -151,7 +176,7 @@ scp_program -> proc_find_all_styles_in_html_document
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_style;;
 
 			=> nrel_then: .proc_find_all_styles_in_html_document_operator3E;;
-			=> nrel_else: .proc_find_all_styles_in_html_document_operator5C;;
+			=> nrel_else: .proc_find_all_styles_in_html_document_operator4C;;
 			*);;
 
 		-> .proc_find_all_styles_in_html_document_operator3E
@@ -175,60 +200,35 @@ scp_program -> proc_find_all_styles_in_html_document
 			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
 			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_tag_content;;
 
-			=> nrel_then: .proc_find_all_styles_in_html_document_operator5A;;
-			=> nrel_else: .proc_find_all_styles_in_html_document_operator5C;; 
+			=> nrel_then: .proc_find_all_styles_in_html_document_operator4A;;
+			=> nrel_else: .proc_find_all_styles_in_html_document_operator4C;; 
 			*);;
 
 		-> .proc_find_all_styles_in_html_document_operator4A
 			(*
-			<- searchElStr5;;
-
-			-> rrel_1: rrel_fixed: rrel_scp_var:  _start_tag;;
-			-> rrel_2: rrel_assign: rrel_scp_var: rrel_common: _arc1;;
-			-> rrel_3: rrel_assign: rrel_scp_var: _unknown_style;;
-			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc2;;
-			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_style;;
-
-			=> nrel_then: .proc_find_all_styles_in_html_document_operator4B;;
-			=> nrel_else: .proc_find_all_styles_in_html_document_operator5C;;
-			*);;
-
-		-> .proc_find_all_styles_in_html_document_operator4B
-			(*
-			<- genElStr3;;
-
-			-> rrel_1: rrel_fixed: rrel_scp_var: _set_for_styles;;
-			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
-			-> rrel_3: rrel_fixed: rrel_scp_var: _unknown_style;;
-
-			=> nrel_goto: .proc_find_all_styles_in_html_document_operator5C;;
-			*);;
-
-		-> .proc_find_all_styles_in_html_document_operator5A
-			(*
 			<- call;;
 
 			-> rrel_1: rrel_fixed: rrel_scp_const: proc_find_all_styles_in_html_document;;
-			-> rrel_2: rrel_fixed: rrel_scp_const: .proc_find_all_styles_in_html_document_operator5A_params
+			-> rrel_2: rrel_fixed: rrel_scp_const: .proc_find_all_styles_in_html_document_operator4A_params
 				(*
 				-> rrel_1: rrel_fixed: rrel_scp_var: _new_unknown;;
 				-> rrel_2: rrel_fixed: rrel_scp_var: _set_for_styles;;
 				*);;
 			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
 
-			=> nrel_goto: .proc_find_all_styles_in_html_document_operator5B;; 
+			=> nrel_goto: .proc_find_all_styles_in_html_document_operator4B;; 
 			*);;
 
-		-> .proc_find_all_styles_in_html_document_operator5B 
+		-> .proc_find_all_styles_in_html_document_operator4B 
 			(*
 			<- waitReturn;;
 
 			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
 
-			=> nrel_goto: .proc_find_all_styles_in_html_document_operator5C;; 
+			=> nrel_goto: .proc_find_all_styles_in_html_document_operator2B;; 
 			*);;	
 
-		-> .proc_find_all_styles_in_html_document_operator5C   
+		-> .proc_find_all_styles_in_html_document_operator4C   
 			(*
 			<- eraseEl;;
 
