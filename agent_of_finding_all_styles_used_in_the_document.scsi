@@ -45,17 +45,8 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_assign: rrel_scp_var: _param;;
 
-			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator2Aa;;
+			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator2A;;
 			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator_return;;
-			*);;
-
-		-> .agent_of_finding_all_styles_used_in_the_document_operator2Aa
-			(*
-			<- printNl;;
-
-			-> rrel_1: rrel_fixed: rrel_scp_const: [BEGIN AGENT!!!];;
-
-			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator2A;;
 			*);;
 
 		-> .agent_of_finding_all_styles_used_in_the_document_operator2A   
@@ -258,7 +249,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _tag_head_or_body;;
 
-			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator11Aa;;
+			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator11A;;
 			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator6D;;
 			*);;
 
@@ -331,7 +322,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc_between_set_and_tag;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _tag_link_or_style;;
 
-			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator9Aa;;
+			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator9A;;
 			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator7G;;
 			*);;
 
@@ -343,19 +334,10 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _tag_link_or_style;;
 
-			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator8Aa;;
+			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator8A;;
 			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator7D;;
 			*);;
 //глобальные стили
-
-		-> .agent_of_finding_all_styles_used_in_the_document_operator8Aa
-			(*
-			<- printNl;;
-
-			-> rrel_1: rrel_fixed: rrel_scp_const: [---------------------------------------GLOBAL STYLES!!!];;
-
-			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator8A;;
-			*);;
 
 		-> .agent_of_finding_all_styles_used_in_the_document_operator8A
 			(*
@@ -426,19 +408,10 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _temp_selector;;
 
-			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator10Aa;;  
+			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator10A;;  
 			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator8E;;
 			*);;		
 //связываемые стили(через link)
-		
-		-> .agent_of_finding_all_styles_used_in_the_document_operator9Aa
-			(*
-			<- printNl;;
-
-			-> rrel_1: rrel_fixed: rrel_scp_const: [LINK STYLES!!!];;
-
-			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator9A;;
-			*);;
 
 		-> .agent_of_finding_all_styles_used_in_the_document_operator9A
 			(*
@@ -492,7 +465,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator22Ga;; 
 			*);;
 
-		-> .agent_of_finding_all_styles_used_in_the_document_operator9E   //тут!
+		-> .agent_of_finding_all_styles_used_in_the_document_operator9E   
 			(*
 			<- searchSetStr3;;
 
@@ -538,7 +511,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator9J;;
 			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator22Ca;;
 			*);;	
-//ОСТАНОВИЛАСЬ ТУТ. Отношения для селектора + принадлежность множеству селекторов + мн-ву селекторов документа!!!
+
 		-> .agent_of_finding_all_styles_used_in_the_document_operator9J
 			(*
 			<- searchElStr3;;
@@ -617,7 +590,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator9O;;
 			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator22Ga;;  
 			*);;
-//поменять местами два снизу и верхний, если не выводит
+			
 		-> .agent_of_finding_all_styles_used_in_the_document_operator9O 
 			(*
 			<- searchElStr3;;
@@ -658,7 +631,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator9R;;
 			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator22Ga;; 
 			*);;
-//поменять местами два снизу и верхний, если не выводит
+
 		-> .agent_of_finding_all_styles_used_in_the_document_operator9R 
 			(*
 			<- searchElStr3;;
@@ -681,18 +654,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 
 			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator9G;;
 			*);;
-
 		// заносим найденные селекторы в ответ
-
-		-> .agent_of_finding_all_styles_used_in_the_document_operator10Aa
-			(*
-			<- printNl;;
-
-			-> rrel_1: rrel_fixed: rrel_scp_const: [WRITE SELECTOR IN ANSWER!!!];;
-
-			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator10A;;
-			*);;
-
 		-> .agent_of_finding_all_styles_used_in_the_document_operator10A
 			(*
 			<- genElStr3;;
@@ -945,18 +907,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 
 			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator8E;;
 			*);;	
-
 //поиск всех стилей в body
-
-		-> .agent_of_finding_all_styles_used_in_the_document_operator11Aa
-			(*
-			<- printNl;;
-
-			-> rrel_1: rrel_fixed: rrel_scp_const: [----------------------STYLES IN BODY!!!];;
-
-			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator11A;;
-			*);;
-
 		-> .agent_of_finding_all_styles_used_in_the_document_operator11A
 			(*
 			<- call;;
@@ -980,9 +931,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 
 			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator6D;;
 			*);;	
-
 //занесение всех стилей в ответ
-
 		-> .agent_of_finding_all_styles_used_in_the_document_operator13A
 			(*
 			<- searchSetStr3;;
@@ -1014,15 +963,6 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			<- eraseEl;;
 
 			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_erase: _arc_between_set_and_style;;
-
-			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator_Ctemp;;
-			*);;
-
-		-> .agent_of_finding_all_styles_used_in_the_document_operator_Ctemp
-			(*
-			<- printNl;;
-
-			-> rrel_1: rrel_fixed: rrel_scp_const: [----------------------------get STYLE];;
 
 			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator13Da;;
 			*);;
@@ -1076,16 +1016,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			-> rrel_5: rrel_assign: rrel_scp_var: _temp_relation;; 
 
 			=> nrel_then: .agent_of_finding_all_styles_used_in_the_document_operator13E;;
-			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator_temp;;
-			*);;
-
-		-> .agent_of_finding_all_styles_used_in_the_document_operator_temp
-			(*
-			<- printNl;;
-
-			-> rrel_1: rrel_fixed: rrel_scp_const: [NO attributes for STYLE];;
-
-			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator22Ma;;
+			=> nrel_else: .agent_of_finding_all_styles_used_in_the_document_operator22Ma;;
 			*);;
 
 		-> .agent_of_finding_all_styles_used_in_the_document_operator13E
@@ -1131,7 +1062,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 			(*
 			<- searchSetStr3;;
 
-			-> rrel_1: rrel_assign: rrel_scp_var: rrel_not_relation: _style_class;;  //его нужно проверить коллом
+			-> rrel_1: rrel_assign: rrel_scp_var: rrel_not_relation: _style_class;;  
 			-> rrel_2: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc1;;
 			-> rrel_3: rrel_fixed: rrel_scp_var: _temp_style;;
 
@@ -1407,16 +1338,7 @@ scp_program -> agent_of_finding_all_styles_used_in_the_document
 
 			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator24A;;
 			*);;
-
-		-> .agent_of_finding_all_styles_used_in_the_document_operator23A
-			(*
-			<- eraseEl;;
-
-			-> rrel_1: rrel_fixed: rrel_scp_var: rrel_erase: _set_for_class;;
-
-			=> nrel_goto: .agent_of_finding_all_styles_used_in_the_document_operator23B;;
-			*);;
-
+			
 		-> .agent_of_finding_all_styles_used_in_the_document_operator23B
 			(*
 			<- eraseEl;;
